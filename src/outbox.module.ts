@@ -5,7 +5,7 @@ import { RmqModule, RmqModuleConfig } from './message-broker';
 import { OutboxService } from './outbox.service';
 
 export interface OutboxModuleOptions {
-  rmqClientName: string;
+  rmqClientName: string | symbol;
   rmqConfig: RmqModuleConfig;
   typeOrmConfig: TypeOrmModuleOptions;
   typeOrmEntites: any[];
