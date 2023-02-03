@@ -1,23 +1,29 @@
 {
   "compilerOptions": {
-    "target": "ES2022",
-    "module": "Node16",
-    "lib": ["ES2022"],
-    "moduleResolution": "Node16",
-    "rootDir": ".",
-    "outDir": "build",
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "importHelpers": true,
-    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "module": "CommonJS",
+    "target": "ES6",
+    "moduleResolution": "Node",
+    "skipLibCheck": true,
+    "declaration": true,
     "sourceMap": true,
+    "baseUrl": "./",
+    "rootDir": "./",
+    "outDir": "./dist",
+    "incremental": true,
+    "strictNullChecks": false,
+    "noImplicitAny": true,
+    "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitReturns": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitAny": false,
-    "noImplicitThis": false,
-    "strictNullChecks": false
+    "noFallthroughCasesInSwitch": false,
+    "allowJs": true
   },
-  "include": ["src/**/*", "__tests__/**/*"]
+  "include": [
+    "./src",
+    "./global.d.ts"
+  ]
 }
