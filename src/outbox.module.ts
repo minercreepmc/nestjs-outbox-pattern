@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { DynamicModule, Module } from '@nestjs/common';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { TypeOrmDynamicModule } from './database';
 import { RmqModule, RmqModuleConfig } from './message-broker';
@@ -13,16 +13,16 @@ export interface OutboxModuleOptions {
 
 @Module({})
 export class OutboxModule {
-  static forRoot(options: OutboxModuleOptions) {
+  static forRoot(options: OutboxModuleOptions): DynamicModule {
     const { typeOrmConfig, rmqClientName, rmqConfig } = options;
     return {
       module: OutboxModule,
-      providers: [
-        OutboxService,
+      imports: [
         RmqModule.register(rmqClientName, rmqConfig),
         TypeOrmDynamicModule.forRoot(typeOrmConfig),
         TypeOrmDynamicModule.forFeature([OutboxModel]),
       ],
+      providers: [OutboxService],
       exports: [OutboxService],
     };
   }
