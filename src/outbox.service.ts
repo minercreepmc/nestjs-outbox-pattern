@@ -14,7 +14,7 @@ export class OutboxService {
     private readonly rabbitMQService: RmqServiceAdapter,
   ) {}
 
-  addMessage$(payload: string, messageType: string) {
+  addMessage$(payload: any, messageType: string) {
     return of(
       this.outboxRepository.create({
         payload,

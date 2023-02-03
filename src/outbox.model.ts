@@ -6,7 +6,7 @@ export class OutboxModel {
   id: number;
 
   @Column()
-  payload: string;
+  payload: any;
 
   @Column()
   messageType: string;
