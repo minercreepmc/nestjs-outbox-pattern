@@ -9,7 +9,6 @@ export interface OutboxModuleOptions {
   rmqClientName: string | symbol;
   rmqConfig: RmqModuleConfig;
   typeOrmConfig: TypeOrmModuleOptions;
-  typeOrmEntites: any[];
 }
 
 @Module({})
