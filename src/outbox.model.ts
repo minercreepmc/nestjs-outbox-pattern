@@ -5,7 +5,7 @@ export class OutboxModel {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
+  @Column('jsonb')
   payload: any;
 
   @Column()
