@@ -1,1 +1,0 @@
-{"version":3,"file":"outbox.model.js","sourceRoot":"","sources":["../../src/outbox.model.ts"],"names":[],"mappings":";;;;;;;;;;;;AAAA,qCAAiE;AAG1D,IAAM,WAAW,GAAjB,MAAM,WAAW;CAYvB,CAAA;AAXC;IAAC,IAAA,gCAAsB,GAAE;;uCACd;AAEX;IAAC,IAAA,gBAAM,GAAE;;4CACO;AAEhB;IAAC,IAAA,gBAAM,GAAE;;gDACW;AAEpB;IAAC,IAAA,gBAAM,GAAE;;2CACM;AAXJ,WAAW;IADvB,IAAA,gBAAM,GAAE;GACI,WAAW,CAYvB;AAZY,kCAAW"}
