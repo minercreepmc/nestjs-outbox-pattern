@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { TypeOrmDynamicModule } from './database';
 import { RmqModule, RmqModuleConfig } from './message-broker';
-import { OutboxService } from './outbox';
+import { OutboxService } from './outbox.service';
 
 export interface OutboxModuleOptions {
   rmqClientName: string;
