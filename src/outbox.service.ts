@@ -14,14 +14,13 @@ export class OutboxService {
     private readonly rabbitMQService: RmqServiceAdapter,
   ) {}
 
-  addMessage$(payload: any, messageType: string) {
-    return of(
-      this.outboxRepository.create({
-        payload,
-        messageType,
-        status: 'unsent',
-      }),
-    ).pipe(map((message) => this.saveMessage$(message)));
+  async addMessage(payload: any, messageType: string) {
+    const message = this.outboxRepository.create({
+      payload,
+      messageType,
+      status: 'unsent',
+    });
+    await this.outboxRepository.save(message);
   }
 
   sendMessages$(): Observable<OutboxModel> {
